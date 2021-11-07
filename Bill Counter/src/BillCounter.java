@@ -19,14 +19,9 @@ public class BillCounter extends NewJFrame
         //Action Events
         AEvents e = new AEvents();
         calculate.addActionListener(e);
-        tmenu.addActionListener(e);
         veg.addActionListener(e);
         non_veg.addActionListener(e);
-        
-        //Text Events
-        TEvents ev = new TEvents();
-        name.addKeyListener(ev);
-        number.addKeyListener(ev);  
+          
     }
     
     //Main Method
@@ -46,14 +41,14 @@ public class BillCounter extends NewJFrame
         {
             if( e.getSource() == calculate)
             {
-            JOptionPane dialog = new JOptionPane();
+                JOptionPane dialog = new JOptionPane();
             
-            bill = " Customer name: "+cus_name+"\n"
-                    +"\n Customer Number: "+cus_number+"\n"
+                bill = " Customer name: "+name.getText()+"\n"
+                    +"\n Customer Number: "+number.getText()+"\n"
                     +"\n Table Number: "+tmenu.getSelectedItem()
                     +"\n"+"\n Meal Type: "+meal;
             
-            dialog.showMessageDialog(null,new JTextArea(bill),"Your Bill",1);
+                dialog.showMessageDialog(null,new JTextArea(bill),"Your Bill",1);
             }
             
             if(e.getSource() == veg)
@@ -72,18 +67,4 @@ public class BillCounter extends NewJFrame
             }
         }
     }
-   
-    //Key Event Class
-    public class TEvents implements KeyListener
-    {   
-        public void keyTyped(KeyEvent e) 
-        {
-            cus_name = name.getText();
-            
-            cus_number = number.getText();
-        }
-        
-        public void keyPressed(KeyEvent e){}
-        public void keyReleased(KeyEvent e){}
-    }   
 }
