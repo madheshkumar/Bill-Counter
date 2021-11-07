@@ -8,9 +8,6 @@ public class BillCounter extends NewJFrame
 {   
     //Instance variables
     String bill;
-    String cus_name;
-    String cus_number;
-    Object table_no;
     String meal;
     
     //Constructor
