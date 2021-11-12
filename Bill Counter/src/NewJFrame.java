@@ -54,7 +54,8 @@ public class NewJFrame extends javax.swing.JFrame{
             }
         });
 
-        Title.setFont(new java.awt.Font("Times New Roman", 0, 32)); // NOI18N
+        Title.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        Title.setForeground(new java.awt.Color(102, 0, 102));
         Title.setText("Bill Counter");
 
         veg.setBackground(new java.awt.Color(157, 224, 172));
@@ -89,9 +90,17 @@ public class NewJFrame extends javax.swing.JFrame{
                 {null, null, null}
             },
             new String [] {
-                "Menu", "Quantity", "Price"
+                "Item", "Quantity", "Price"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         table.setFillsViewportHeight(true);
         table.setRowHeight(35);
         table.setRowMargin(2);
@@ -193,12 +202,12 @@ public class NewJFrame extends javax.swing.JFrame{
                                     .addComponent(customer_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(customer_num, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
                                 .addComponent(veg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)))
                 .addGap(27, 27, 27))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Title)
+                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(343, 343, 343))
         );
         layout.setVerticalGroup(
@@ -301,7 +310,7 @@ public class NewJFrame extends javax.swing.JFrame{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Est_amount;
     private javax.swing.JLabel Title;
-    private javax.swing.JTextField amount;
+    public javax.swing.JTextField amount;
     private javax.swing.ButtonGroup buttonGroup5;
     public javax.swing.JButton calculate;
     private javax.swing.JLabel customer_name;
@@ -314,7 +323,7 @@ public class NewJFrame extends javax.swing.JFrame{
     public javax.swing.JTextField number;
     private javax.swing.JLabel sel_meal;
     private javax.swing.JLabel sel_table;
-    private javax.swing.JTable table;
+    public javax.swing.JTable table;
     public javax.swing.JComboBox<String> tmenu;
     public javax.swing.JRadioButton veg;
     // End of variables declaration//GEN-END:variables
