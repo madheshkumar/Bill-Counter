@@ -40,14 +40,12 @@ public class BillCounter extends NewJFrame
         veg.addActionListener(e);
         non_veg.addActionListener(e);
         amount.addActionListener(e);
+       
         
-        
+        //table
         DefaultTableModel model = new DefaultTableModel(data,column);
         table.setModel(model);
-        
-        
-        ListSelectionModel model1 = table.getSelectionModel();
-        
+        ListSelectionModel model1 = table.getSelectionModel(); 
         model1.addListSelectionListener(new ListSelectionListener()
         {
             @Override
@@ -78,6 +76,7 @@ public class BillCounter extends NewJFrame
             
         });
     }
+    
     //Main Methodw
     public static void main(String[] args) 
     {
@@ -86,6 +85,7 @@ public class BillCounter extends NewJFrame
         frame.getContentPane().setBackground(new Color(157, 224, 172));
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setSize(900,650);
+        frame.setResizable(false);
         frame.setVisible(true);
          
     }
@@ -122,11 +122,6 @@ public class BillCounter extends NewJFrame
                     meal= "Non Veg";
                 }
             }
-            if (e.getSource()==table)
-            {
-                
-            }
         }
     }
-         
 }

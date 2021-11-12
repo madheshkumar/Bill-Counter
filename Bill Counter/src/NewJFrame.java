@@ -45,9 +45,10 @@ public class NewJFrame extends javax.swing.JFrame{
         setSize(new java.awt.Dimension(1000, 600));
 
         tmenu.setBackground(new java.awt.Color(205, 247, 214));
-        tmenu.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        tmenu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tmenu.setForeground(new java.awt.Color(153, 0, 255));
         tmenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Table 1", "Table 2", "Table 3", "Table 4", "Table 5", "Table 6" }));
+        tmenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204)));
         tmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tmenuActionPerformed(evt);
@@ -55,22 +56,24 @@ public class NewJFrame extends javax.swing.JFrame{
         });
 
         Title.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        Title.setForeground(new java.awt.Color(102, 0, 102));
+        Title.setForeground(new java.awt.Color(102, 116, 255));
         Title.setText("Bill Counter");
 
         veg.setBackground(new java.awt.Color(157, 224, 172));
         meal_type.add(veg);
-        veg.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        veg.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         veg.setForeground(new java.awt.Color(153, 0, 255));
         veg.setText("Veg");
 
         non_veg.setBackground(new java.awt.Color(157, 224, 172));
         meal_type.add(non_veg);
-        non_veg.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        non_veg.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         non_veg.setForeground(new java.awt.Color(153, 0, 255));
         non_veg.setText("Non-Veg");
 
-        table.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        table.setBackground(new java.awt.Color(255, 232, 207));
+        table.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        table.setForeground(new java.awt.Color(144, 29, 73));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -101,33 +104,35 @@ public class NewJFrame extends javax.swing.JFrame{
                 return canEdit [columnIndex];
             }
         });
+        table.setCellSelectionEnabled(true);
         table.setFillsViewportHeight(true);
         table.setRowHeight(35);
         table.setRowMargin(2);
         table.setShowGrid(true);
         jScrollPane1.setViewportView(table);
 
-        sel_meal.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        sel_meal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         sel_meal.setForeground(new java.awt.Color(204, 0, 255));
-        sel_meal.setText("    | Select Meal |");
+        sel_meal.setText("     | Select Meal |");
         sel_meal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
-        sel_table.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        sel_table.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         sel_table.setForeground(new java.awt.Color(204, 0, 255));
-        sel_table.setText("   | Select Table |");
+        sel_table.setText("     | Select Table |");
         sel_table.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         calculate.setBackground(new java.awt.Color(204, 255, 0));
         calculate.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         calculate.setForeground(new java.awt.Color(255, 102, 102));
         calculate.setText("BILL");
-        calculate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        calculate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 204), new java.awt.Color(255, 255, 204)));
         calculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calculateActionPerformed(evt);
             }
         });
 
+        amount.setBackground(new java.awt.Color(255, 218, 226));
         amount.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         amount.setForeground(new java.awt.Color(0, 102, 204));
         amount.addActionListener(new java.awt.event.ActionListener() {
@@ -136,21 +141,22 @@ public class NewJFrame extends javax.swing.JFrame{
             }
         });
 
-        Est_amount.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        Est_amount.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Est_amount.setForeground(new java.awt.Color(255, 102, 102));
         Est_amount.setText("Estimated Amount =");
 
-        customer_name.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        customer_name.setForeground(new java.awt.Color(204, 0, 204));
-        customer_name.setText("  Customer Name");
+        customer_name.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        customer_name.setForeground(new java.awt.Color(204, 0, 255));
+        customer_name.setText("   Customer Name");
         customer_name.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
-        customer_num.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        customer_num.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         customer_num.setForeground(new java.awt.Color(204, 0, 255));
         customer_num.setText(" Customer Number");
         customer_num.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
-        name.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        name.setBackground(new java.awt.Color(255, 216, 193));
+        name.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         name.setForeground(new java.awt.Color(153, 0, 255));
         name.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -165,7 +171,8 @@ public class NewJFrame extends javax.swing.JFrame{
             }
         });
 
-        number.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        number.setBackground(new java.awt.Color(255, 219, 195));
+        number.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         number.setForeground(new java.awt.Color(153, 0, 255));
         number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,37 +185,36 @@ public class NewJFrame extends javax.swing.JFrame{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(343, 343, 343))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Est_amount, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Est_amount, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(26, 26, 26)
                         .addComponent(calculate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(customer_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(number)
+                            .addComponent(sel_meal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sel_table, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(customer_num, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                            .addComponent(name)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(non_veg, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(number)
-                                    .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(sel_meal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(sel_table, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(customer_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(customer_num, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
-                                .addComponent(veg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)))
-                .addGap(27, 27, 27))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(343, 343, 343))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(non_veg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(veg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(tmenu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)))
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,20 +234,19 @@ public class NewJFrame extends javax.swing.JFrame{
                         .addGap(26, 26, 26)
                         .addComponent(sel_table, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(tmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(sel_meal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(veg, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(non_veg, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(calculate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Est_amount, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Est_amount, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculate, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
