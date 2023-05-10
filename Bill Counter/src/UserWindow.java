@@ -2,12 +2,12 @@
 import javax.swing.JOptionPane;
 
 
-public class NewJFrame extends javax.swing.JFrame{
+public class UserWindow extends javax.swing.JFrame{
 
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public UserWindow() {
         initComponents();
     }
 
@@ -48,7 +48,6 @@ public class NewJFrame extends javax.swing.JFrame{
         tmenu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         tmenu.setForeground(new java.awt.Color(153, 0, 255));
         tmenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Table 1", "Table 2", "Table 3", "Table 4", "Table 5", "Table 6" }));
-        tmenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204)));
         tmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tmenuActionPerformed(evt);
@@ -114,18 +113,15 @@ public class NewJFrame extends javax.swing.JFrame{
         sel_meal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         sel_meal.setForeground(new java.awt.Color(204, 0, 255));
         sel_meal.setText("     | Select Meal |");
-        sel_meal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         sel_table.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         sel_table.setForeground(new java.awt.Color(204, 0, 255));
         sel_table.setText("     | Select Table |");
-        sel_table.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         calculate.setBackground(new java.awt.Color(204, 255, 0));
         calculate.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         calculate.setForeground(new java.awt.Color(255, 102, 102));
         calculate.setText("BILL");
-        calculate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 204), new java.awt.Color(255, 255, 204)));
         calculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calculateActionPerformed(evt);
@@ -148,12 +144,10 @@ public class NewJFrame extends javax.swing.JFrame{
         customer_name.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         customer_name.setForeground(new java.awt.Color(204, 0, 255));
         customer_name.setText("   Customer Name");
-        customer_name.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         customer_num.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         customer_num.setForeground(new java.awt.Color(204, 0, 255));
         customer_num.setText(" Customer Number");
-        customer_num.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         name.setBackground(new java.awt.Color(255, 216, 193));
         name.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -294,20 +288,21 @@ public class NewJFrame extends javax.swing.JFrame{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new UserWindow().setVisible(true);
             }
         });
     }
