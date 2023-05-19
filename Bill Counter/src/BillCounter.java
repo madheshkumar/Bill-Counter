@@ -2,10 +2,10 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.*;
+import java.util.Iterator;
+import javax.swing.JTextArea;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.*;
@@ -44,7 +44,9 @@ public class BillCounter extends UserWindow {
         db.Connect();
         //Action Events
         AEvents e = new AEvents(db);
+
         calculate.addActionListener(e);
+        display.addActionListener(e);
         veg.addActionListener(e);
         non_veg.addActionListener(e);
         amount.addActionListener(e);
@@ -80,13 +82,12 @@ public class BillCounter extends UserWindow {
 
         });
     }
+
     //Main Method
     public static void main(String[] args) {
 
         BillCounter frame = new BillCounter();
-        
-        
-        
+
         frame.setTitle("Bill Counter");
         frame.getContentPane().setBackground(new Color(157, 224, 172));
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -98,22 +99,44 @@ public class BillCounter extends UserWindow {
 
     //Action Event Class 
     public class AEvents implements ActionListener {
+
         BillDatabase db;
-        AEvents(BillDatabase db){
-            this.db=db;
+
+        AEvents(BillDatabase db) {
+            this.db = db;
         }
+
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == calculate) {
-                JOptionPane dialog = new JOptionPane();
+                try {
+                    JOptionPane dialog = new JOptionPane();
 
-                bill = " Customer name: " + name.getText() + "\n"
-                        + "\n Customer Number: " + number.getText() + "\n"
-                        + "\n Table Number: " + tmenu.getSelectedItem()
-                        + "\n" + "\n Meal Type: " + meal
-                        + "\n" + "\n Amount: Rs." + total;
+                    bill = " Customer name: " + name.getText() + "\n"
+                            + "\n Customer Number: " + number.getText() + "\n"
+                            + "\n Table Number: " + tmenu.getSelectedItem()
+                            + "\n" + "\n Meal Type: " + meal
+                            + "\n" + "\n Amount: Rs." + total;
 
-                dialog.showMessageDialog(null, new JTextArea(bill), "Your Bill", 1);
-                db.Insert(name.getText(), number.getText(), tmenu.getSelectedItem(), meal, total);
+                    dialog.showMessageDialog(null, new JTextArea(bill), "Your Bill", 1);
+                    db.Insert(name.getText(), number.getText(), tmenu.getSelectedItem(), meal, total);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BillCounter.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if (e.getSource() == display) {
+                try {
+                    JOptionPane displayCustomer = new JOptionPane();
+                    ArrayList customer = db.Display();
+                    StringBuilder sb = new StringBuilder();
+                    Iterator<String> it = customer.iterator();
+                    while (it.hasNext()) {
+                        sb.append(it.next()+"\n");
+                    }
+                    
+                    displayCustomer.showMessageDialog(null, new JTextArea(sb.toString()), "Customers", 1);
+                } catch (SQLException e1) {
+                    System.out.println(e1);
+                }
             }
 
             if (e.getSource() == veg) {
@@ -121,6 +144,7 @@ public class BillCounter extends UserWindow {
                     meal = "Veg";
                 }
             }
+
             if (e.getSource() == non_veg) {
                 if (non_veg.isSelected()) {
                     meal = "Non Veg";
@@ -128,6 +152,4 @@ public class BillCounter extends UserWindow {
             }
         }
     }
-
-
 }
