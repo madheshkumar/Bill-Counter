@@ -107,15 +107,15 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="non_veg" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" pref="505" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="513" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="calculate" alignment="0" max="32767" attributes="0"/>
+                  <Component id="calculate" alignment="0" pref="63" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="amount" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
                       <Component id="Est_amount" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="display" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="display" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>

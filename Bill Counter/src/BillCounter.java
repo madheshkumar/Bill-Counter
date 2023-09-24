@@ -126,14 +126,17 @@ public class BillCounter extends UserWindow {
             if (e.getSource() == display) {
                 try {
                     JOptionPane displayCustomer = new JOptionPane();
-                    ArrayList customer = db.Display();
                     StringBuilder sb = new StringBuilder();
+                    
+                    
+                    ArrayList customer = db.Display();
                     Iterator<String> it = customer.iterator();
                     while (it.hasNext()) {
                         sb.append(it.next()+"\n");
                     }
-                    
-                    displayCustomer.showMessageDialog(null, new JTextArea(sb.toString()), "Customers", 1);
+                    JTextArea customerTextArea = new JTextArea(sb.toString());
+                    customerTextArea.setBackground(Color.LIGHT_GRAY);
+                    displayCustomer.showMessageDialog(null, customerTextArea, "Customers", 1);
                 } catch (SQLException e1) {
                     System.out.println(e1);
                 }
