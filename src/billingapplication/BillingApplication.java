@@ -31,7 +31,6 @@ public class BillingApplication extends UserInterface implements ActionListener,
     CreateBillPanel createBillPanel;
     DisplayRevenuePanel displayRevenuePanel;
     DisplayCustomersPanel displayCustomersPanel;
-
     BillDatabase db;
 
     String[] menuList;

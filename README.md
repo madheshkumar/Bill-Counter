@@ -2,5 +2,25 @@
 
 Bill counter 
 
-![output1](https://github.com/madheshkumar/Bill-Counter/assets/76593246/fb8bac63-a4a6-49a6-a9b4-ad6e5eb7c7f9)
-![output2](https://github.com/madheshkumar/Bill-Counter/assets/76593246/9573dbf2-beb6-45ae-8891-656cf60ea903)
+![output1](output images/output1.png)
+ 
+Update Menu
+
+![output2](output images/output2.png)
+
+Create Bill
+
+![output3](output images/output3.png)
+
+Display Bill
+
+![output4](output images/output4.png)
+
+Display revenue
+
+![output5](output images/output5.png)
+
+Display customers
+
+![output6](output images/output6.png)
+
